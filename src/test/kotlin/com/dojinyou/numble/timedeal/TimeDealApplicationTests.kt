@@ -9,5 +9,4 @@ class TimeDealApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }
