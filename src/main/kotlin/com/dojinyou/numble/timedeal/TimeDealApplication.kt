@@ -10,4 +10,3 @@ fun main(args: Array<String>) {
     runApplication<TimeDealApplication>(*args)
     println("ktlint test")
 }
-
