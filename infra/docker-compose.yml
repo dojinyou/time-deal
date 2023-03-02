@@ -40,3 +40,10 @@ services:
       MYSQL_ROOT_PASSWORD: root
     platform: linux/x86_64
     restart: always
+
+  redis:
+    container_name: timedeal-auth-session
+    image: redis:7.0-alpine
+    restart: always
+    ports:
+      - '16379:6379'

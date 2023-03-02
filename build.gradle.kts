@@ -24,6 +24,8 @@ dependencies {
     // spring
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.0.3")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis:3.0.3")
+    implementation("org.springframework.session:spring-session-data-redis:3.0.0")
 
     // kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
