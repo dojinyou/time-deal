@@ -20,16 +20,21 @@ repositories {
 }
 
 extra["testcontainersVersion"] = "1.17.6"
-
 dependencies {
     // spring
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.data:spring-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.0.3")
 
     // kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    // ulid creator
+    implementation("com.github.f4b6a3:ulid-creator:5.1.0")
+
+    // db connector
+    runtimeOnly("com.mysql:mysql-connector-j")
 
     // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
