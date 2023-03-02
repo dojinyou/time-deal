@@ -8,3 +8,8 @@ spring:
     url: jdbc:mysql://localhost:33306/timedeal
     username: root
     password: root
+
+  data:
+    redis:
+      host: localhost
+      port: 16379
