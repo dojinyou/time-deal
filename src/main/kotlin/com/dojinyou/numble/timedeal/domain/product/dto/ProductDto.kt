@@ -13,5 +13,5 @@ data class ProductDto(
     val openedAt: Instant,
     val closedAt: Instant,
     val createdAt: Instant,
-    val updatedAt: Instant,
+    val updatedAt: Instant
 )

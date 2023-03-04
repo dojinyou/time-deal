@@ -9,5 +9,5 @@ data class UpdateProductDto(
     val timeDealPrice: Long?,
     val displayedAt: Instant?,
     val openedAt: Instant?,
-    val closedAt: Instant?,
+    val closedAt: Instant?
 )

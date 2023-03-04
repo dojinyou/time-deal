@@ -2,19 +2,25 @@ package com.dojinyou.numble.timedeal.domain.common
 
 import com.dojinyou.numble.timedeal.global.utils.TimeUtils
 import com.github.f4b6a3.ulid.UlidCreator
-import jakarta.persistence.*
+import jakarta.persistence.Column
+import jakarta.persistence.EntityListeners
+import jakarta.persistence.Id
+import jakarta.persistence.MappedSuperclass
+import jakarta.persistence.PostLoad
+import jakarta.persistence.PostPersist
+import jakarta.persistence.PreUpdate
 import org.hibernate.proxy.HibernateProxy
-
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import org.springframework.data.domain.Persistable
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.time.Instant
-import java.util.*
+import java.util.Objects
+import java.util.UUID
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
-abstract class BaseEntity: Persistable<UUID> {
+abstract class BaseEntity : Persistable<UUID> {
 
     @Id
     private val id: UUID = UlidCreator.getMonotonicUlid().toUuid()

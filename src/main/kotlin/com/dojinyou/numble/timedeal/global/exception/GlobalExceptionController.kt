@@ -1,15 +1,15 @@
 package com.dojinyou.numble.timedeal.global.exception
 
-import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestControllerAdvice
+import org.tinylog.Logger
 
 @RestControllerAdvice
 class GlobalExceptionController {
 
-    private val logger = LoggerFactory.getLogger(this::class.java)
+    private val logger = Logger.tag("EXCEPTION")
 
     @ExceptionHandler(AuthenticationException::class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
@@ -29,8 +29,7 @@ class GlobalExceptionController {
 
     private fun logAndReturnMessage(exception: Exception): String {
         val message = exception.message.toString()
-        logger.info("$exception: $message")
+        logger.warn { "$exception: $message" }
         return message
     }
-
 }

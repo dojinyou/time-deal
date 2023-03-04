@@ -35,6 +35,12 @@ dependencies {
     // ulid creator
     implementation("com.github.f4b6a3:ulid-creator:5.1.0")
 
+    // logging
+    implementation("org.slf4j:slf4j-api:2.0.5")
+    implementation("org.tinylog:tinylog-api:2.6.0")
+    implementation("org.tinylog:tinylog-impl:2.6.0")
+    runtimeOnly("org.tinylog:slf4j-tinylog:2.6.0")
+
     // db connector
     runtimeOnly("com.mysql:mysql-connector-j")
 
