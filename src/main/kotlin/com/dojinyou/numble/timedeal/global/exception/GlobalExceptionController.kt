@@ -11,6 +11,14 @@ class GlobalExceptionController {
 
     private val logger = LoggerFactory.getLogger(this::class.java)
 
+    @ExceptionHandler(AuthenticationException::class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    fun handleAuthenticationException(exception: AuthenticationException) = logAndReturnMessage(exception)
+
+    @ExceptionHandler(AuthorizationException::class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    fun handleAuthorizationException(exception: AuthorizationException) = logAndReturnMessage(exception)
+
     @ExceptionHandler(NotFoundException::class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     fun handleNotFoundException(exception: NotFoundException) = logAndReturnMessage(exception)
