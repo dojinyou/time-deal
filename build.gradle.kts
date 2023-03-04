@@ -43,6 +43,12 @@ dependencies {
     testImplementation("org.testcontainers:junit-jupiter")
 }
 
+allOpen { // final keyword가 붙지 않도록 열어줍니다
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.MappedSuperclass")
+    annotation("javax.persistence.Embeddable")
+}
+
 dependencyManagement {
     imports {
         mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
