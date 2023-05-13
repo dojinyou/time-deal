@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController
 class HealthController {
     @GetMapping("health")
     @ResponseStatus(HttpStatus.OK)
-    fun healthCheck() { /* 헬스체크용 api */}
+    fun healthCheck() { /* 헬스체크용 api */ }
 }
